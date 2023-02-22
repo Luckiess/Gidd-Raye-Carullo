@@ -1,0 +1,11 @@
+<div *ngFor="let u of users | async">
+    <div *ngIf= "u">
+        <div class="card 1">
+            <div class="card_title title-white">
+              <p class="p-title">Email: {{u.email}}</p>  
+              <p>Password: {{u.password}}</p>
+              
+            </div>
+          </div>
+        </div>
+</div>

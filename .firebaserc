@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "luckiess"
+  },
+  "targets": {
+    "luckiess": {
+      "hosting": {
+        "my-app": [
+          "luckiess"
+        ]
+      }
+    }
+  }
+}
