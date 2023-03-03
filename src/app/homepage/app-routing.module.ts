@@ -7,6 +7,7 @@ import { HomepageComponent } from './homepage.component';
 
 
 
+
 const routes: Routes = [
   {path: 'signup',component:SignUpComponent},
   {path: 'login',component:LoginUpComponent},

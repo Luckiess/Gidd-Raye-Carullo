@@ -4,14 +4,13 @@
 
 export const environment = {
   firebase: {
-    projectId: 'luckiess',
-    appId: '1:524888086770:web:e55d9b19c4e397069d586b',
-    databaseURL: 'https://luckiess-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'luckiess.appspot.com',
-    apiKey: 'AIzaSyBhnKlWmKugqFjQExa8LLl3p3FluG7zZFc',
-    authDomain: 'luckiess.firebaseapp.com',
-    messagingSenderId: '524888086770',
-    measurementId: 'G-VLNQE6DESW',
+  apiKey: "AIzaSyB59J0gE9F87Zz9cZJ5Jq3hz_PGSL9hUJw",
+  authDomain: "angular-2d2c3.firebaseapp.com",
+  databaseURL: "https://angular-2d2c3-default-rtdb.firebaseio.com",
+  projectId: "angular-2d2c3",
+  storageBucket: "angular-2d2c3.appspot.com",
+  messagingSenderId: "932242079900",
+  appId: "1:932242079900:web:ef9aa0c9f5ae7d0e36ed59"
   },
     production: false
   };
