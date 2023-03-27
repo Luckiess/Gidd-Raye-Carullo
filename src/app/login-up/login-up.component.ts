@@ -30,7 +30,7 @@ last_login:date
 } );
 sessionStorage.setItem('id',value.email);
 
-this.router.navigate(['/post'])
+this.router.navigate(['/display'])
 }else{
 alert('wrong credential!');
 }
