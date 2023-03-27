@@ -19,42 +19,80 @@ interface Item {
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-
-  users!: Observable<any[]>;
-  constructor(public database: Database, private db: AngularFireDatabase) {
-  this.users = db.list('/users').valueChanges();
+  account!: Observable<any[]>;
+  constructor(public database: Database, private FireDb: AngularFireDatabase) {
+  this.account = FireDb.list('/accounts').valueChanges();
    }
    
   ngOnInit(): void {
 
 
   }
-
-
   del(value: any){
-    remove(ref(this.database, 'users/' + value));
+    remove(ref(this.database, 'accounts/' + value));
     alert('Deleted Successfully')
   }
+  email = "";
 
-   update(value:any){
+password = "";
+     edit(z: any) {
+       this.email = z.email;
+     
+     }
+  
+     update(value:any){
+
+   if(value.password == ""){
+    alert('put the new password!');
+   }else{
+    update(ref(this.database, 'accounts/' + value.email), {
+      password: value.password
+    }); 
+    this.email = "";
+    
+    this.password = "";
+   alert('User updated!');
+     
+   }
+    }
  
-    update(ref(this.database, 'users/' + value.email), {
-       password: value.password
-     }); 
-    alert('User updated!');
+  }
+
+  // users!: Observable<any[]>;
+  // constructor(public database: Database, private db: AngularFireDatabase) {
+  // this.users = db.list('/users').valueChanges();
+  //  }
+   
+  // ngOnInit(): void {
+
+
+  // }
+
+
+  // del(value: any){
+  //   remove(ref(this.database, 'users/' + value));
+  //   alert('Deleted Successfully')
+  // }
+
+  //  update(value:any){
+ 
+  //   update(ref(this.database, 'users/' + value.email), {
+  //      password: value.password
+  //    }); 
+  //   alert('User updated!');
       
-  }
+  // }
 
 
-  email = '';
-  fillForm(email: any) {
-    this.email = email;
-  }
+  // email = '';
+  // fillForm(email: any) {
+  //   this.email = email;
+  // }
 
 
 
-  password: any;
-  itemId: any;
+  // password: any;
+  // itemId: any;
 
  
-  }
+  // }
