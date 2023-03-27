@@ -4,6 +4,8 @@
     <!-- <input type="text" ngModel id="name"> -->
     <textarea type="text" class="textarea" ngModel [(ngModel)]="post" name="post" id="post" placeholder="post"></textarea><br>
     <input type="submit">
+    <button routerLink="/display"></button>
+    
 </form>
 
 <div class="container" *ngFor="let z of account | async;let i = index">
