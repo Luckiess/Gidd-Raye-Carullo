@@ -12,6 +12,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AppRoutingModule } from './homepage/app-routing.module';
+import { PostComponent } from './post/post.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './homepage/app-routing.module';
     AppComponent,
     SignUpComponent,
     LoginUpComponent,
-    HomepageComponent
+    HomepageComponent,
+    PostComponent
   ],
   imports: [
     AppRoutingModule,

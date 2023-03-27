@@ -13,6 +13,10 @@ export class SignUpComponent {
   ngOnInit(): void {
   }
   ab = "";
+  uid = "";
+  role = true;
+  user = "";
+
   registerUser(value:any){
 
     const starCountRef = ref(this.database, 'accounts/' + value.email);
@@ -21,7 +25,7 @@ export class SignUpComponent {
   this.ab = db.email
  
      }); 
-  
+    
       
      if (  value.email == null || value.email == "" || value.password == null || value.password == ""   
       ){
@@ -33,9 +37,19 @@ export class SignUpComponent {
   
         
       else {
-       
+        if(value.roles == "admin"){
+          this.role =true;
+        }
+       else if(value.roles=="user"){
+        this.role= false;
+       }
+       this.uid="user"+ Math.floor(10000+Math.random()*9000000);
+
     set(ref(this.database, 'accounts/' + value.email), {
+       id:this.uid,
        
+       admin:this.role,
+
         email: value.email,
        
         password: value.password

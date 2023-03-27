@@ -25,16 +25,35 @@ export class HomepageComponent implements OnInit {
    }
    
   ngOnInit(): void {
+    const starCountRef = ref(this.database,'users/'+this.user);
+    onValue(starCountRef,(snapshot)=>{
+      const db = snapshot.val();
+      this.email = db.user;
+      this.role = db.adamn;
 
+    });
 
+  console.log(this.user)
+  console.log(this.role)
+  if(this.user!=""){
+    this.sent =true;
+
+  }else if (this.user == ""){
+    this.sent= false;
   }
+  }
+
   del(value: any){
     remove(ref(this.database, 'accounts/' + value));
     alert('Deleted Successfully')
   }
+  user = sessionStorage.getItem('id');
   email = "";
-
-password = "";
+  data = "";
+  password = "";
+  post="";
+  sent=true;
+  role=true;
      edit(z: any) {
        this.email = z.email;
      

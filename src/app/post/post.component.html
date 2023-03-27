@@ -1,0 +1,18 @@
+<form #post123 = "ngForm"(ngSubmit)="posting(post123.value)">
+ 
+    <input type="text" style="text-align: center;font-weight: bold;font-size: 2em;" [(ngModel)]="this.name" ngModel name="name"  class="headinput" id="name" placeholder="Name"><br>
+    <!-- <input type="text" ngModel id="name"> -->
+    <textarea type="text" class="textarea" ngModel [(ngModel)]="post" name="post" id="post" placeholder="post"></textarea><br>
+    <input type="submit">
+</form>
+
+<div class="container" *ngFor="let z of account | async;let i = index">
+
+<h1><b> {{z.name}}</b></h1>
+<p>{{z.post}}</p>
+
+
+    
+<button *ngIf="this.role == true||this.name == z.name" (click)="del(z.id)">Delete</button>
+</div>
+
